@@ -26,17 +26,9 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          <MovieCard {...movie} key={movie.id} history={this.props.history} />
         ))}
       </div>
     );
   }
-}
-
-function MovieDetails({ movie }) {
-  return (
-    <Link to={`/movies/${movie.id}`}>
-      <MovieCard {...movie} />
-    </Link>
-  );
 }
