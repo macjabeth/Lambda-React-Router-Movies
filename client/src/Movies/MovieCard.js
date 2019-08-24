@@ -21,7 +21,11 @@ const MovieCard = ({
         </div>
       ))}
     </div>
-    <div className="save-button" onClick={saveMovie}>Save</div>
+    {saveMovie && (
+      <div className="save-button" onClick={saveMovie}>
+        Save
+      </div>
+    )}
   </div>
 );
 
